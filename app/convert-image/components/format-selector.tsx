@@ -14,7 +14,7 @@ interface FormatSelectorProps {
   onChange: (value: string) => void
 }
 
-const IMAGE_FORMATS = ['png', 'jpg', 'jpeg', 'webp', 'gif', 'bmp', 'svg', 'ico']
+const IMAGE_FORMATS = ['png', 'jpg', 'jpeg', 'webp', 'gif', 'bmp', 'ico']
 
 export function FormatSelector({ value, onChange }: FormatSelectorProps) {
   return (

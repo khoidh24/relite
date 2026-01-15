@@ -96,9 +96,21 @@ export function ConverterClient() {
       )
     } catch (error) {
       console.error('Conversion error:', error)
+
+      // Show user-friendly error message
+      const errorMessage =
+        error instanceof Error ? error.message : 'Conversion failed'
+
       setActions((prev) =>
         prev.map((a) =>
-          a.id === actionId ? { ...a, is_converting: false, is_error: true } : a
+          a.id === actionId
+            ? {
+                ...a,
+                is_converting: false,
+                is_error: true,
+                error_message: errorMessage
+              }
+            : a
         )
       )
     }

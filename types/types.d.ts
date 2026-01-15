@@ -12,4 +12,5 @@ export type Action = {
   output?: string
   id?: string
   progress?: number
+  error_message?: string
 }

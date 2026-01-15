@@ -25,7 +25,7 @@ interface FileItemProps {
   onFormatChange: (action: Action, format: string) => void
 }
 
-const IMAGE_FORMATS = ['png', 'jpg', 'jpeg', 'webp', 'gif', 'bmp', 'svg', 'ico']
+const IMAGE_FORMATS = ['png', 'jpg', 'jpeg', 'webp', 'gif', 'bmp', 'ico']
 
 export function FileItem({
   action,
@@ -85,7 +85,7 @@ export function FileItem({
             {action.is_error && (
               <div className='flex items-center gap-1.5 text-xs text-destructive'>
                 <XCircle className='w-3 h-3' />
-                <span>Failed</span>
+                <span>{action.error_message || 'Failed'}</span>
               </div>
             )}
           </div>
@@ -201,9 +201,16 @@ export function FileItem({
         )}
 
         {action.is_error && (
-          <div className='flex items-center gap-1.5 text-xs text-destructive'>
-            <XCircle className='w-3 h-3' />
-            <span>Conversion failed</span>
+          <div className='space-y-1'>
+            <div className='flex items-center gap-1.5 text-xs text-destructive'>
+              <XCircle className='w-3 h-3' />
+              <span>Conversion failed</span>
+            </div>
+            {action.error_message && (
+              <p className='text-xs text-destructive/80'>
+                {action.error_message}
+              </p>
+            )}
           </div>
         )}
 
