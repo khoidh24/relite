@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Be_Vietnam_Pro, Figtree } from 'next/font/google'
 import './globals.css'
+import { NextIntlClientProvider } from 'next-intl'
 
 const figtree = Figtree({ subsets: ['latin'], variable: '--font-sans' })
 
@@ -23,7 +24,7 @@ export default function RootLayout({
   return (
     <html lang='en' className={figtree.variable}>
       <body className={`${beVietnamPro.className} antialiased`}>
-        {children}
+        <NextIntlClientProvider>{children}</NextIntlClientProvider>
       </body>
     </html>
   )

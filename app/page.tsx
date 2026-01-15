@@ -1,5 +1,6 @@
-import { ComponentExample } from '@/components/component-example'
+import { getTranslations } from 'next-intl/server'
 
 export default async function Home() {
-  return <ComponentExample />
+  const t = await getTranslations('HomePage')
+  return <></>
 }
