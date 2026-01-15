@@ -1,5 +1,5 @@
 import { getTranslations } from 'next-intl/server'
-import { ConverterClient } from './convert-image/components/converter-client'
+import { ConverterClient } from './components/converter-client'
 import type { Metadata } from 'next'
 
 export async function generateMetadata(): Promise<Metadata> {

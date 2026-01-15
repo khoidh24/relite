@@ -1,5 +1,12 @@
 {
   "HomePage": {
     "title": "Hello world!"
+  },
+  "ConvertImage": {
+    "title": "Relite - Image Converter",
+    "description": "Convert your images to different formats instantly and secure without claw your personal information",
+    "default_format": "Default convert format",
+    "drag_and_drop": "Drag & drop images here",
+    "or_click_to_select": "or click to select files (max 10 files)"
   }
 }
