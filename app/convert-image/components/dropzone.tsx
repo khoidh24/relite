@@ -37,7 +37,7 @@ export function Dropzone({
     <div
       {...getRootProps()}
       className={cn(
-        'border-2 border-dashed rounded-lg p-4 sm:p-12 text-center cursor-pointer transition-all duration-300',
+        'group border-2 border-dashed rounded-lg p-4 sm:p-12 text-center cursor-pointer transition-all duration-300',
         'hover:border-primary hover:bg-primary/5 w-full',
         isDragActive
           ? 'border-primary bg-primary/5 scale-105'
@@ -48,13 +48,13 @@ export function Dropzone({
       <div className='flex flex-col items-center gap-3 sm:gap-4'>
         <div
           className={cn(
-            'p-3 sm:p-4 rounded-full bg-accent transition-transform duration-300',
-            isDragActive && 'scale-110'
+            'p-3 sm:p-4 rounded-full group-hover:bg-accent-foreground bg-accent transition-all duration-300',
+            isDragActive && 'scale-110 bg-accent-foreground'
           )}
         >
           <Upload
             className={cn(
-              'w-6 h-6 sm:w-8 sm:h-8 text-muted-foreground transition-colors duration-300',
+              'w-6 h-6 sm:w-8 sm:h-8 text-muted-foreground transition-colors duration-300 group-hover:text-background',
               isDragActive && 'text-background'
             )}
           />
