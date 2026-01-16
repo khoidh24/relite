@@ -1,6 +1,6 @@
+import type { Metadata } from 'next'
 import { getTranslations } from 'next-intl/server'
 import { ConverterClient } from './convert-image/components/converter-client'
-import type { Metadata } from 'next'
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations('ConvertImage')

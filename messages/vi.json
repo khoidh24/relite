@@ -7,6 +7,7 @@
     "description": "Thay đổi định dạng hình ảnh của bạn siêu an toàn và nhanh chóng mà không sợ bị lộ dữ liệu cá nhân",
     "default_format": "Định dạng convert mặc định",
     "drag_and_drop": "Kéo & thả hình vào đây",
-    "or_click_to_select": "Hoặc nhấn vô đây luôn để up hình (Tối đa 10 file nha)"
+    "drop_the_file_here": "Thả file vào đây...",
+    "or_click_to_select": "Hoặc nhấn vô đây luôn để up hình (Tối đa {maxFiles} file nha)"
   }
 }

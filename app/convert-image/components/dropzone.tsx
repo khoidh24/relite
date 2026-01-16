@@ -4,6 +4,7 @@ import { useCallback } from 'react'
 import { useDropzone } from 'react-dropzone'
 import { Upload } from 'lucide-react'
 import { cn } from '@/lib/utils'
+import { useTranslations } from 'next-intl'
 
 interface DropzoneProps {
   onFilesAccepted: (files: File[]) => void
@@ -16,8 +17,9 @@ export function Dropzone({
   accept = {
     'image/*': ['.jpg', '.jpeg', '.png', '.gif', '.bmp', '.webp', '.svg']
   },
-  maxFiles = 10
+  maxFiles = 20
 }: DropzoneProps) {
+  const t = useTranslations('ConvertImage')
   const onDrop = useCallback(
     (acceptedFiles: File[]) => {
       onFilesAccepted(acceptedFiles)
@@ -59,12 +61,10 @@ export function Dropzone({
         </div>
         <div>
           <p className='text-base sm:text-lg font-medium'>
-            {isDragActive
-              ? 'Drop the files here...'
-              : 'Drag & drop images here'}
+            {isDragActive ? t('drop_the_file_here') : t('drag_and_drop')}
           </p>
           <p className='text-xs sm:text-sm text-muted-foreground mt-1'>
-            or click to select files (max {maxFiles} files)
+            {t('or_click_to_select', { maxFiles })}
           </p>
         </div>
       </div>

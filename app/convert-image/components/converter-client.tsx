@@ -1,14 +1,14 @@
 'use client'
 
-import { useState, useRef, useEffect } from 'react'
 import { Action } from '@/types'
+import convert from '@/utils/convert'
+import loadFfmpeg from '@/utils/load-ffmpeg'
 import { FFmpeg } from '@ffmpeg/ffmpeg'
+import { useEffect, useRef, useState } from 'react'
 import { Dropzone } from './dropzone'
 import { FileList } from './file-list'
 import { FormatSelector } from './format-selector'
 import { LoadingSpinner } from './loading-spinner'
-import loadFfmpeg from '@/utils/load-ffmpeg'
-import convert from '@/utils/convert'
 
 export function ConverterClient() {
   const [actions, setActions] = useState<Action[]>([])
